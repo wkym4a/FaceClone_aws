@@ -1,0 +1,39 @@
+<!--↑エラーメッセージ表示枠……バリデーションエラーを出す画面ではこれを追加しておくこと。-->
+<% content_for :show_msgerr do%>
+  <%= render 'layouts/form_msgerr', model_info: @user %>
+<% end %>
+<!--↑エラーメッセージ表示枠-->
+
+<!--↓タイトル表示枠-->
+<% content_for :show_head_title do%>
+  <h1 class="title_head"><%= get_tablename_by_model(@user) %>登録画面</h1>
+<% end %>
+<!--↑タイトル表示枠-->
+
+<%= form_with(model:@user,local: true ) do |f| %>
+
+  <div class="line_info">
+    <%= f.label "名前" ,class: "label_user_info line_content_1" %>
+    <%= f.text_field :name  ,class: "input_user_info line_content_2" %>
+  </div>
+
+  <div class="line_info">
+    <%= f.label "メールアドレス"  ,class: "label_user_info line_content_1" %>
+    <%= f.email_field :email  ,class: "input_user_info line_content_2" %>
+  </div>
+
+  <div class="line_info">
+    <%= f.label "パスワード"  ,class: "label_user_info line_content_1" %>
+    <%= f.password_field :password ,class: "input_user_info line_content_2" %>
+  </div>
+
+  <div class="line_info">
+    <%= f.label "パスワード(確認用)"  ,class: "label_user_info line_content_1" %>
+    <%= f.password_field :password_confirmation  ,class: "input_user_info line_content_2" %>
+  </div>
+
+  <div">
+    <%= f.submit "ユーザーを登録します。" ,class: "btn btn-default btn_next"%>
+  </div>
+
+<% end %>

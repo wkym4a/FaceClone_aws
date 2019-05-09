@@ -1,0 +1,16 @@
+<!--↑エラーメッセージ表示枠……バリデーションエラーを出す画面ではこれを追加しておくこと。-->
+<% content_for :show_msgerr do%>
+  <%= render 'layouts/form_msgerr', model_info: @user %>
+<% end %>
+<!--↑エラーメッセージ表示枠-->
+
+<!--↓タイトル表示枠-->
+<% content_for :show_head_title do%>
+  <h1 class="title_head"><%= get_tablename_by_model(@user) %>情報</h1>
+<% end %>
+<!--↑タイトル表示枠-->
+
+<h5>【ユーザー情報】</h5>
+<p>●名前 : <%= @user.name %></p>
+<p>●メールアドレス: <%= @user.email %></p>
+<p>※ユーザー情報変更機能は実装されていません。</p>

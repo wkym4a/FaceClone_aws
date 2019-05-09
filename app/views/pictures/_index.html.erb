@@ -1,0 +1,80 @@
+<!-- ログインしてなかった場合のボタン押下→画面再表示」用に、表示している画面のユーザーidを取得 -->
+<%= form_with(model: user ,url: new_picture_path , method:"get" ,local: true) do |f| %>
+  <%= f.hidden_field :id %>
+
+  <% if logged_in? %>
+    <%= f.submit "新しく投稿する", class: 'btn btn-default' ,disabled:false %>
+  <% else %>
+    <%= f.submit "新しく投稿する", class: 'btn btn-default' ,disabled:true %>
+  <% end %>
+
+<% end %>
+
+<div class="box_picture_index">
+  <table class="" >
+    <% @pictures.each do |picture| %>
+      <tr class="row box_picture_index_content">
+        <td class="col-xs-12">
+          <div class="row row-eq-height index_box_line">
+
+            <div class="col-xs-12 boxline_picture_index">
+              <div class="">
+
+              <%= link_to picture.user.name.to_s , user_index_picture_path(picture.user_id),class: 'i' %>
+              <%= label "","さんの投稿です。"  %>
+            </div>
+            </div>
+
+            <div div="col-xs-12 boxline_picture_index">
+              <%= label ""," 　　 題名："  %>
+              <%= label "",picture.title ,class: 'i' %>
+            </div>
+
+            <div class="col-xs-12 boximage_picture_index">
+              <% if picture.image && picture.image.url %>
+                <%= image_tag(picture.image.url)  %>
+              <% else %>
+                <%= label ""," 　　画像はまだ登録されていません。"  %>
+              <% end %>
+            </div>
+
+            <div class="col-xs-12 boxarea_picture_index">
+              <%= text_area "","readonly", value: picture.content ,readonly: true ,class: "boxarea_picture_index_content"%>
+            </div>
+
+            <div class="col-xs-2">
+              <%= link_to "詳細を表示", picture,href: picture_path(picture.id),method: :get,class: "btn btn-default"  %>
+            </div>
+
+            <div class="col-xs-6">
+            </div>
+
+            <div class="col-xs-2">
+
+                <% if logged_in? %>
+                  <%= link_to "編集する", picture ,href: edit_picture_path(picture.id) ,method: :get,class: "btn btn-default",disabled:false %>
+                <% else %>
+                  <%= link_to "編集する", picture ,href: edit_picture_path(picture.id) ,method: :get,class: "btn btn-default",disabled:true %>
+                <% end %>
+
+            </div>
+
+            <div class="col-xs-2">
+
+                <% if logged_in? %>
+                  <%= link_to '削除する', picture, method: :delete,data: { confirm: '本当に削除してよろしいですか?' } ,
+                  class: 'btn btn-default' ,disabled:false %>
+                <% else %>
+                  <%= link_to '削除する', picture, method: :delete,
+                  class: 'btn btn-default' ,disabled:true %>
+                <% end %>
+            </div>
+
+          </div>
+
+        </td>
+
+      </tr>
+    <% end %>
+  </table>
+</div>

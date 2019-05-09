@@ -1,0 +1,69 @@
+// Place all the styles related to the Pictures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+input.chk_picture_delimage{
+  margin-top:43px;
+  margin-left: 70px;
+}
+
+p.chk_picture_delimage_label{
+  margin-top:-8px;
+  margin-left: 90px;
+}
+
+.textarea_picture_content{
+  width: 400px;
+  height: 100px;
+}
+
+.box_picter_image{
+  width: 600px;
+  height: 300px;
+}
+
+div.line_picture_imageinfo{
+  height: 80px;
+}
+
+.box_picter_image_content{
+//  height: 100%;
+//  width: 100%;
+}
+
+.box_picture_index{
+  width: 96%;
+  height: 600px;
+  border: solid;
+  background-color: 	#F5DEB3;
+
+  overflow: auto;
+  margin: 2%;
+
+}
+
+.box_picture_index_content{
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+div.boxline_picture_index{
+  margin-left: 4px;
+  height: 30px;
+
+}
+
+.index_box_line{
+  border: solid;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.boxarea_picture_index{
+  height: 100px;
+
+}
+.boxarea_picture_index_content{
+    width: 100%;
+    height: 100%;
+}

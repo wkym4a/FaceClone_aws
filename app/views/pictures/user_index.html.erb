@@ -1,0 +1,7 @@
+<!--↓タイトル表示枠-->
+<% content_for :show_head_title do%>
+  <h1 class="title_head"><%= @user.name %>さんの投稿一覧です。</h1>
+<% end %>
+<!--↑タイトル表示枠-->
+
+<%= render 'index', user: @user   %>
