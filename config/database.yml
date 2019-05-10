@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: FaceClone_aws_production
-  username: FaceClone
+  database: achieve_production
+  username: achieve
   password: <%= ENV['FACECLONE_DATABASE_PASSWORD'] %>
