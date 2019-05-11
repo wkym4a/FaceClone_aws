@@ -81,11 +81,9 @@ class PicturesController < ApplicationController
 
   #新規登録処理
   def create
-    binding.pry
     @picture = Picture.new(picture_params)
     @picture.user_id=current_user.id
 
-      binding.pry
     respond_to do |format|
 
       if @picture.save == true
