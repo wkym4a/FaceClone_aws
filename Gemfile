@@ -40,6 +40,10 @@ gem 'mini_racer', platforms: :ruby # デプロイ時に必要
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
 
+  #自分で追加
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
+
 group :development, :test do
 
 
