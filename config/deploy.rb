@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.6.0'
+lock '3.11.0'
 
 # デプロイするアプリケーション名
 set :application, 'FaceClone_aws'
