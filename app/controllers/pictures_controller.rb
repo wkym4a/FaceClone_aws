@@ -46,7 +46,6 @@ class PicturesController < ApplicationController
 
     @picture = Picture.new(picture_params)
     @picture.user_id=current_user.id
-
     if @picture.invalid?
       params[:validate_err]=:on
       render 'new'

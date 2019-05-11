@@ -25,7 +25,8 @@ gem 'faker'
 gem 'bcrypt', '3.1.11'
 
 #画像管理用に追加
-gem 'carrierwave'
+# gem 'fog'
+gem 'carrierwave',github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 
 #aws用に追加
