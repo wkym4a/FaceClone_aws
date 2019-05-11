@@ -34,7 +34,8 @@ gem 'fog-aws'
 gem 'unicorn' # アプリケーションサーバのunicorn
 gem 'mini_racer', platforms: :ruby # デプロイ時に必要
 
-  gem 'capistrano', '3.6.0' # capistranoのツール一式
+  gem 'capistrano', '3.11.0' # capistranoのツール一式
+  # gem 'capistrano', '3.6.0' # capistranoのツール一式
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
